@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Moments — Value Your Time",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A life calendar in every new tab. See your months lived, your months remaining, and feel the weight of now.",
   "chrome_url_overrides": {
     "newtab": "newtab.html"
@@ -28,6 +28,6 @@
     "storage"
   ],
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'"
+    "extension_pages": "script-src 'self'; object-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;"
   }
 }

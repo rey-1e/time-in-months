@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
@@ -10,7 +13,7 @@
     <!-- Header -->
     <div class="popup-header">
       <h3>Moments</h3>
-      <p>Update your settings</p>
+      <p>Configure Your Visual Timeline</p>
     </div>
 
     <!-- Settings Form -->
@@ -24,7 +27,7 @@
           <input type="number" id="pop-day" min="1" max="31" placeholder="15" required autocomplete="off">
         </div>
         <div class="input-group">
-          <label for="pop-month">Mon</label>
+          <label for="pop-month">Month</label>
           <input type="number" id="pop-month" min="1" max="12" placeholder="04" required autocomplete="off">
         </div>
         <div class="input-group">
@@ -34,7 +37,7 @@
       </div>
 
       <!-- Life Expectancy Row -->
-      <div class="section-label" style="margin-top: 12px;">Life Expectancy</div>
+      <div class="section-label" style="margin-top: 14px;">Life Expectancy</div>
       <div class="expectancy-row">
         <input
           type="number"
@@ -46,23 +49,23 @@
           aria-label="Life expectancy in years"
         >
         <span class="expectancy-unit">years</span>
+        <button type="button" id="help-btn" class="help-btn" title="How is this calculated?">?</button>
       </div>
 
-      <!-- Validation -->
+      <!-- Theme Selector Row -->
+      <div class="section-label" style="margin-top: 16px;">Color Theme</div>
+      <div id="theme-grid" class="theme-grid"></div>
+
+      <!-- Validation Error -->
       <div id="error-bubble" class="error-bubble hidden" role="alert" aria-live="polite"></div>
 
       <!-- Save Button -->
       <button type="submit" class="submit-btn" id="submit-btn">Save Settings</button>
 
       <!-- Success Flash -->
-      <div id="success-msg" class="success-msg hidden" aria-live="polite">✓ Saved</div>
+      <div id="success-msg" class="success-msg hidden" aria-live="polite">✓ Theme & Settings Applied</div>
 
     </form>
-
-    <!-- Danger Zone: Reset -->
-    <div class="danger-zone">
-      <button type="button" id="reset-btn" class="reset-btn">Reset All Data</button>
-    </div>
 
   </div>
   <script src="popup.js"></script>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap');
+
 :root {
   --canvas-bg: #00020f;
   --text-primary: #bdbdbd;
@@ -9,7 +11,7 @@
   --modal-bg: #0c0c0d;
   --input-bg: #141415;
   --border-light: #222224;
-  --font-family-display: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-display: 'Red Hat Display', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-family-mono: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Monaco, Consolas, monospace;
 
   /* Responsive dot sizing — scales down gracefully on smaller viewports */
