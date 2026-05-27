@@ -1,0 +1,395 @@
+:root {
+  --canvas-bg: #00020f;
+  --text-primary: #bdbdbd;
+  --text-gray-medium: #86868b;
+  --text-gray-dark: #3b3b3b;
+  --color-orange: #ff6b00;
+  --color-orange-dark: #b56024;
+  --color-teal: #00ceb9;
+  --modal-bg: #0c0c0d;
+  --input-bg: #141415;
+  --border-light: #222224;
+  --font-family-display: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-mono: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Monaco, Consolas, monospace;
+
+  /* Responsive dot sizing — scales down gracefully on smaller viewports */
+  --dot-size: min(13px, 1.45vh, 1.2vw);
+  --dot-gap: min(5px, 0.5vh);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: var(--canvas-bg);
+  color: var(--text-primary);
+  font-family: var(--font-family-display);
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Subtle noise grain overlay for depth */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ─── ONBOARDING ─────────────────────────────────────────── */
+
+#onboarding-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeUp 0.4s ease-out both;
+}
+
+.onboarding-card {
+  background: var(--modal-bg);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  max-width: 380px;
+  width: 90%;
+}
+
+.onboarding-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.onboarding-card p {
+  font-size: 0.8rem;
+  color: var(--text-gray-medium);
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.exact-input-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.input-cell {
+  flex: 1;
+  text-align: left;
+}
+
+.input-cell label {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-gray-medium);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.input-cell input::-webkit-outer-spin-button,
+.input-cell input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-cell input {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+  outline: none;
+  -moz-appearance: textfield;
+  transition: border-color 0.15s;
+}
+
+.input-cell input:focus {
+  border-color: var(--color-orange);
+}
+
+.submit-action-btn {
+  background: var(--color-orange);
+  color: var(--text-primary);
+  border: none;
+  width: 100%;
+  padding: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.submit-action-btn:hover {
+  background: #ff7b1a;
+}
+
+.submit-action-btn:active {
+  transform: scale(0.98);
+}
+
+/* ─── DASHBOARD ─────────────────────────────────────────── */
+
+#app-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 3vh 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  animation: fadeUp 0.35s ease-out both;
+}
+
+.center-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 3.5vh;
+  margin-top: 2vh;
+}
+
+/* ─── CLOCK ──────────────────────────────────────────────── */
+
+.clock-segment {
+  text-align: center;
+}
+
+.digital-time {
+  font-family: var(--font-family-mono);
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  user-select: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.divider-colon,
+.divider-dot {
+  color: #2c2c2e;
+  margin: 0 4px;
+}
+
+.digital-time .ms {
+  font-size: 2.2rem;
+  color: #555558;
+  margin-left: 2px;
+}
+
+.time-label {
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  color: var(--text-gray-medium);
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* ─── DOT GRID ───────────────────────────────────────────── */
+
+.map-grid-segment {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+.grid-lbl-left {
+  color: var(--text-gray-medium);
+}
+
+.grid-lbl-right {
+  color: var(--text-gray-medium);
+  text-transform: uppercase;
+}
+
+.canvas-grid {
+  display: grid;
+  grid-template-columns: repeat(30, var(--dot-size));
+  gap: var(--dot-gap);
+  margin-bottom: 8px;
+  justify-content: center;
+  /* GPU-composite the entire grid for smooth hover repaints */
+  will-change: auto;
+}
+
+.dot-cell {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  border: 1.5px solid var(--text-gray-dark);
+  background-color: transparent;
+  cursor: default;
+  transition: transform 0.1s ease;
+  /* contain layout thrash to each dot */
+  contain: layout style;
+}
+
+.dot-cell.lived {
+  background-color: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.dot-cell.current {
+  background-color: var(--color-teal);
+  border-color: var(--color-teal);
+  animation: glow-pulse 2s infinite ease-in-out;
+}
+
+.dot-cell:hover {
+  transform: scale(1.3);
+  border-color: var(--text-primary) !important;
+}
+
+@keyframes glow-pulse {
+  0%   { box-shadow: 0 0 0 0   rgba(0, 206, 185, 0.4); }
+  70%  { box-shadow: 0 0 0 6px rgba(0, 206, 185, 0);   }
+  100% { box-shadow: 0 0 0 0   rgba(0, 206, 185, 0);   }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .dot-cell.current {
+    animation: none;
+  }
+  #app-container,
+  #onboarding-screen {
+    animation: none;
+  }
+}
+
+.grid-footer-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  letter-spacing: 1px;
+  color: var(--text-gray-dark);
+  font-weight: 600;
+}
+
+/* ─── BOTTOM STATS ───────────────────────────────────────── */
+
+.bottom-controls-bar {
+  width: 100%;
+  max-width: 530px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.metrics-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.metric-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.metric-num {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  margin-bottom: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-title {
+  font-size: 0.58rem;
+  letter-spacing: 1px;
+  color: var(--text-gray-medium);
+  font-weight: 700;
+}
+
+.orange-highlight .metric-num { color: var(--color-orange); }
+.gray-highlight   .metric-num { color: var(--color-orange-dark); }
+.green-highlight  .metric-num { color: var(--color-teal); }
+
+/* ─── ERROR BUBBLE ───────────────────────────────────────── */
+
+.error-bubble {
+  background: #1c0f0d;
+  color: #ff6b00;
+  border: 1px solid #3c1e18;
+  font-size: 0.65rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: -12px;
+  margin-bottom: 20px;
+  position: relative;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.error-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #3c1e18 transparent;
+}
+
+/* ─── KEYFRAMES ──────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-3px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── SMALL VIEWPORT GUARD ───────────────────────────────── */
+
+@media (max-height: 600px) {
+  .center-block {
+    gap: 2vh;
+    margin-top: 1vh;
+  }
+  .digital-time {
+    font-size: 2.4rem;
+  }
+}

@@ -1,0 +1,210 @@
+body {
+  background-color: #020412;
+  color: #f4f4f5;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  width: 240px;
+  padding: 0;
+  margin: 0;
+}
+
+.popup-container {
+  padding: 20px 16px 14px;
+}
+
+/* ─── HEADER ─────────────────────────────────────────────── */
+
+.popup-header {
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #121526;
+}
+
+.popup-header h3 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ff6b00;
+  margin: 0 0 3px 0;
+}
+
+.popup-header p {
+  font-size: 11px;
+  color: #86868b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ─── SECTION LABEL ──────────────────────────────────────── */
+
+.section-label {
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #555560;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* ─── BIRTH DATE ROW ─────────────────────────────────────── */
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-group label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #86868b;
+  font-weight: 600;
+}
+
+.input-group input,
+.expectancy-row input {
+  width: 100%;
+  background: #0b0d19;
+  border: 1px solid #1e2136;
+  color: #ffffff;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  text-align: center;
+  outline: none;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+  -moz-appearance: textfield;
+}
+
+.input-group input::-webkit-outer-spin-button,
+.input-group input::-webkit-inner-spin-button,
+.expectancy-row input::-webkit-outer-spin-button,
+.expectancy-row input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-group input:focus,
+.expectancy-row input:focus {
+  border-color: #ff6b00;
+  box-shadow: 0 0 0 1px rgba(255, 107, 0, 0.15);
+}
+
+.input-group input.invalid-input,
+.expectancy-row input.invalid-input {
+  border-color: #ff453a;
+  box-shadow: 0 0 0 1px rgba(255, 69, 58, 0.15);
+}
+
+/* ─── EXPECTANCY ROW ─────────────────────────────────────── */
+
+.expectancy-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.expectancy-row input {
+  width: 70px;
+  flex-shrink: 0;
+}
+
+.expectancy-unit {
+  font-size: 11px;
+  color: #555560;
+  letter-spacing: 0.5px;
+}
+
+/* ─── ERROR / SUCCESS ────────────────────────────────────── */
+
+.error-bubble {
+  color: #ff453a;
+  font-size: 10.5px;
+  text-align: center;
+  margin: 8px 0 4px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+  animation: fadeIn 0.18s ease-out;
+}
+
+.success-msg {
+  color: #00ceb9;
+  font-size: 10.5px;
+  text-align: center;
+  margin: 6px 0 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: fadeIn 0.18s ease-out;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── SUBMIT BUTTON ──────────────────────────────────────── */
+
+.submit-btn {
+  background: #ff6b00;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s, background-color 0.15s;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  margin-top: 14px;
+}
+
+.submit-btn:hover  { background-color: #ff7b1a; }
+.submit-btn:active { transform: scale(0.98); }
+
+/* ─── DANGER ZONE ────────────────────────────────────────── */
+
+.danger-zone {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #121526;
+  display: flex;
+  justify-content: center;
+}
+
+.reset-btn {
+  background: transparent;
+  border: none;
+  color: #555560;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+}
+
+.reset-btn:hover {
+  color: #ff453a;
+  background: rgba(255, 69, 58, 0.08);
+}

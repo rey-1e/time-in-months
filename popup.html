@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+
+    <!-- Header -->
+    <div class="popup-header">
+      <h3>Moments</h3>
+      <p>Update your settings</p>
+    </div>
+
+    <!-- Settings Form -->
+    <form id="popup-form" novalidate>
+
+      <!-- Birth Date Row -->
+      <div class="section-label">Date of Birth</div>
+      <div class="input-row">
+        <div class="input-group">
+          <label for="pop-day">Day</label>
+          <input type="number" id="pop-day" min="1" max="31" placeholder="15" required autocomplete="off">
+        </div>
+        <div class="input-group">
+          <label for="pop-month">Mon</label>
+          <input type="number" id="pop-month" min="1" max="12" placeholder="04" required autocomplete="off">
+        </div>
+        <div class="input-group">
+          <label for="pop-year">Year</label>
+          <input type="number" id="pop-year" min="1900" max="2100" placeholder="1999" required autocomplete="off">
+        </div>
+      </div>
+
+      <!-- Life Expectancy Row -->
+      <div class="section-label" style="margin-top: 12px;">Life Expectancy</div>
+      <div class="expectancy-row">
+        <input
+          type="number"
+          id="pop-expectancy"
+          min="50"
+          max="120"
+          placeholder="90"
+          autocomplete="off"
+          aria-label="Life expectancy in years"
+        >
+        <span class="expectancy-unit">years</span>
+      </div>
+
+      <!-- Validation -->
+      <div id="error-bubble" class="error-bubble hidden" role="alert" aria-live="polite"></div>
+
+      <!-- Save Button -->
+      <button type="submit" class="submit-btn" id="submit-btn">Save Settings</button>
+
+      <!-- Success Flash -->
+      <div id="success-msg" class="success-msg hidden" aria-live="polite">✓ Saved</div>
+
+    </form>
+
+    <!-- Danger Zone: Reset -->
+    <div class="danger-zone">
+      <button type="button" id="reset-btn" class="reset-btn">Reset All Data</button>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
