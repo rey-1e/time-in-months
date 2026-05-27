@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --canvas-bg: #00020f;
-  --text-primary: #bdbdbd;
-  --text-gray-medium: #86868b;
-  --text-gray-dark: #3b3b3b;
+  --canvas-bg: #16192b;
+  --text-primary: #f1f5f9;
+  --text-gray-medium: #94a3b8;
+  --text-gray-dark: #2d354f;
   --color-orange: #ff6b00;
-  --color-orange-dark: #b56024;
+  --color-orange-dark: #ff8533;
   --color-teal: #00ceb9;
-  --modal-bg: #0c0c0d;
-  --input-bg: #141415;
-  --border-light: #222224;
+  --modal-bg: #22273d;
+  --input-bg: #2d3454;
+  --border-light: #3d476f;
   --font-family-display: 'Red Hat Display', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-family-mono: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Monaco, Consolas, monospace;
 
@@ -43,6 +43,7 @@ body {
   justify-content: center;
   /* Subtle noise grain overlay for depth */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  transition: background-color 0.25s ease;
 }
 
 .hidden {
@@ -68,6 +69,7 @@ body {
   text-align: center;
   max-width: 380px;
   width: 90%;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .onboarding-card h2 {
@@ -121,7 +123,7 @@ body {
   text-align: center;
   outline: none;
   -moz-appearance: textfield;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, background-color 0.25s;
 }
 
 .input-cell input:focus {
@@ -130,7 +132,7 @@ body {
 
 .submit-action-btn {
   background: var(--color-orange);
-  color: var(--text-primary);
+  color: #ffffff;
   border: none;
   width: 100%;
   padding: 12px;
@@ -192,7 +194,7 @@ body {
 
 .divider-colon,
 .divider-dot {
-  color: #2c2c2e;
+  color: var(--text-gray-dark);
   margin: 0 4px;
 }
 
@@ -242,7 +244,6 @@ body {
   gap: var(--dot-gap);
   margin-bottom: 8px;
   justify-content: center;
-  /* GPU-composite the entire grid for smooth hover repaints */
   will-change: auto;
 }
 
@@ -253,8 +254,7 @@ body {
   border: 1.5px solid var(--text-gray-dark);
   background-color: transparent;
   cursor: default;
-  transition: transform 0.1s ease;
-  /* contain layout thrash to each dot */
+  transition: transform 0.1s ease, background-color 0.25s, border-color 0.25s;
   contain: layout style;
 }
 
@@ -296,8 +296,9 @@ body {
   justify-content: space-between;
   font-size: 0.68rem;
   letter-spacing: 1px;
-  color: var(--text-gray-dark);
+  color: var(--text-gray-medium);
   font-weight: 600;
+  opacity: 0.8;
 }
 
 /* ─── BOTTOM STATS ───────────────────────────────────────── */
@@ -329,6 +330,7 @@ body {
   letter-spacing: -0.5px;
   margin-bottom: 2px;
   font-variant-numeric: tabular-nums;
+  transition: color 0.25s ease;
 }
 
 .metric-title {

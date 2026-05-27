@@ -5,28 +5,39 @@
 'use strict';
 
 const THEMES = [
-  { id: 'classic', name: 'Classic Moments', bg: '#00020f', lived: '#ff6b00', current: '#00ceb9', text: '#bdbdbd', textMed: '#86868b', textDark: '#3b3b3b', left: '#b56024' },
-  { id: 'nordic', name: 'Nordic Frost', bg: '#0f172a', lived: '#38bdf8', current: '#34d399', text: '#f1f5f9', textMed: '#94a3b8', textDark: '#334155', left: '#0284c7' },
-  { id: 'tokyo', name: 'Tokyo Neon', bg: '#0d0e15', lived: '#ff007f', current: '#00f0ff', text: '#e2e8f0', textMed: '#718096', textDark: '#2a2b3d', left: '#b5005a' },
-  { id: 'moss', name: 'Forest Moss', bg: '#0b130e', lived: '#a3e635', current: '#22c55e', text: '#f0fdf4', textMed: '#86efac', textDark: '#243c2c', left: '#65a30d' },
-  { id: 'sunset', name: 'Sunset Boulevard', bg: '#140b18', lived: '#f43f5e', current: '#fbbf24', text: '#faf5ff', textMed: '#c084fc', textDark: '#2d1a36', left: '#be123c' },
-  { id: 'noir', name: 'Monochrome Noir', bg: '#09090b', lived: '#f4f4f5', current: '#71717a', text: '#fafafa', textMed: '#a1a1aa', textDark: '#27272a', left: '#e4e4e7' },
-  { id: 'cyberpunk', name: 'Cyberpunk 2077', bg: '#05050a', lived: '#fdf009', current: '#00ffff', text: '#ffffff', textMed: '#8b8ba7', textDark: '#1e1e38', left: '#c4ba04' },
-  { id: 'sakura', name: 'Sakura Blossom', bg: '#140d12', lived: '#f472b6', current: '#f43f5e', text: '#fff1f2', textMed: '#fda4af', textDark: '#2e1b27', left: '#db2777' },
-  { id: 'ocean', name: 'Deep Ocean', bg: '#020813', lived: '#2563eb', current: '#38bdf8', text: '#f8fafc', textMed: '#64748b', textDark: '#1e293b', left: '#1d4ed8' },
-  { id: 'espresso', name: 'Espresso Brew', bg: '#120d0a', lived: '#d97706', current: '#fcd34d', text: '#fdfbf7', textMed: '#a27b5c', textDark: '#2d1f18', left: '#b45309' },
-  { id: 'slate', name: 'Vintage Slate', bg: '#1a1c1e', lived: '#94a3b8', current: '#f1f5f9', text: '#f8fafc', textMed: '#64748b', textDark: '#334155', left: '#475569' },
-  { id: 'crimson', name: 'Crimson Velvet', bg: '#120205', lived: '#dc2626', current: '#fb7185', text: '#fff5f5', textMed: '#f87171', textDark: '#320b11', left: '#991b1b' },
-  { id: 'mint', name: 'Ethereal Mint', bg: '#06100e', lived: '#059669', current: '#a7f3d0', text: '#f0fdf4', textMed: '#34d399', textDark: '#1a2e29', left: '#047857' },
-  { id: 'lavender', name: 'Lavender Fields', bg: '#0d0b18', lived: '#8b5cf6', current: '#c084fc', text: '#faf5ff', textMed: '#a78bfa', textDark: '#241e3a', left: '#6d28d9' },
-  { id: 'solar', name: 'Solar Gold', bg: '#0f0d02', lived: '#ca8a04', current: '#facc15', text: '#fefdf0', textMed: '#e11d48', textDark: '#2e290f', left: '#a16207' },
-  { id: 'steel', name: 'Steel Industrial', bg: '#111827', lived: '#9ca3af', current: '#e5e7eb', text: '#f9fafb', textMed: '#9ca3af', textDark: '#374151', left: '#4b5563' },
-  { id: 'toxic', name: 'Toxic Wasteland', bg: '#030712', lived: '#22c55e', current: '#d9f99d', text: '#f3f4f6', textMed: '#9ca3af', textDark: '#111827', left: '#16a34a' },
-  { id: 'aurora', name: 'Aura Borealis', bg: '#020617', lived: '#10b981', current: '#818cf8', text: '#f8fafc', textMed: '#94a3b8', textDark: '#1e293b', left: '#047857' },
-  { id: 'barbie', name: 'Barbie Dream', bg: '#1a0512', lived: '#ec4899', current: '#fbcfe8', text: '#fff1f2', textMed: '#f472b6', textDark: '#370d28', left: '#db2777' },
-  { id: 'amethyst', name: 'Royal Amethyst', bg: '#0c021a', lived: '#7c3aed', current: '#a78bfa', text: '#f5f3ff', textMed: '#ddd6fe', textDark: '#250f4a', left: '#5b21b6' },
-  { id: 'prussian', name: 'Prussian Midnight', bg: '#050a18', lived: '#0284c7', current: '#38bdf8', text: '#f0f9ff', textMed: '#7dd3fc', textDark: '#0f1e3d', left: '#0369a1' },
-  { id: 'terracotta', name: 'Burnt Terracotta', bg: '#1a0e08', lived: '#ea580c', current: '#fdba74', text: '#fff7ed', textMed: '#ffedd5', textDark: '#381e11', left: '#c2410c' }
+  // ── DARK THEMES (1-15) ──────────────────────────────────────────────────
+  { id: 'classic', name: 'Classic Moments', bg: '#16192b', lived: '#ff6b00', current: '#00ceb9', text: '#f1f5f9', textMed: '#94a3b8', textDark: '#2d354f', left: '#ff8533', modalBg: '#22273d', inputBg: '#2d3454', borderLight: '#3d476f' },
+  { id: 'nordic', name: 'Nordic Frost', bg: '#1e293b', lived: '#38bdf8', current: '#34d399', text: '#f8fafc', textMed: '#94a3b8', textDark: '#334155', left: '#0284c7', modalBg: '#334155', inputBg: '#1e293b', borderLight: '#475569' },
+  { id: 'tokyo', name: 'Tokyo Neon', bg: '#211f30', lived: '#ff007f', current: '#00f0ff', text: '#f1f5f9', textMed: '#a5b4fc', textDark: '#312e4d', left: '#ff3399', modalBg: '#2d2a45', inputBg: '#211f30', borderLight: '#3e3b5e' },
+  { id: 'moss', name: 'Forest Moss', bg: '#1c261e', lived: '#a3e635', current: '#22c55e', text: '#f0fdf4', textMed: '#a7f3d0', textDark: '#2b3d2f', left: '#84cc16', modalBg: '#283a2d', inputBg: '#1c261e', borderLight: '#3b5442' },
+  { id: 'sunset', name: 'Sunset Boulevard', bg: '#2b1c2b', lived: '#f43f5e', current: '#fbbf24', text: '#fff1f2', textMed: '#f5d0fe', textDark: '#432b43', left: '#fb7185', modalBg: '#3d283d', inputBg: '#2b1c2b', borderLight: '#543854' },
+  { id: 'noir', name: 'Monochrome Noir', bg: '#27272a', lived: '#fafafa', current: '#a1a1aa', text: '#fafafa', textMed: '#d4d4d8', textDark: '#3f3f46', left: '#f4f4f5', modalBg: '#3f3f46', inputBg: '#27272a', borderLight: '#52525b' },
+  { id: 'cyberpunk', name: 'Cyberpunk 2077', bg: '#1e1e2f', lived: '#fdf009', current: '#00ffff', text: '#ffffff', textMed: '#9ca3af', textDark: '#2d2d47', left: '#eab308', modalBg: '#2b2b40', inputBg: '#1e1e2f', borderLight: '#3e3e5c' },
+  { id: 'sakura', name: 'Sakura Blossom', bg: '#2d1c25', lived: '#ec4899', current: '#fda4af', text: '#fff1f2', textMed: '#fbcfe8', textDark: '#452b39', left: '#f472b6', modalBg: '#3f2734', inputBg: '#2d1c25', borderLight: '#573648' },
+  { id: 'ocean', name: 'Deep Sea', bg: '#1a263b', lived: '#3b82f6', current: '#60a5fa', text: '#f8fafc', textMed: '#93c5fd', textDark: '#2e3f5c', left: '#2563eb', modalBg: '#263652', inputBg: '#1a263b', borderLight: '#364c73' },
+  { id: 'espresso', name: 'Espresso Brew', bg: '#2d221c', lived: '#f59e0b', current: '#fcd34d', text: '#fffbeb', textMed: '#fde68a', textDark: '#43332a', left: '#d97706', modalBg: '#3e3027', inputBg: '#2d221c', borderLight: '#574337' },
+  { id: 'slate', name: 'Slate Industrial', bg: '#334155', lived: '#cbd5e1', current: '#38bdf8', text: '#f8fafc', textMed: '#cbd5e1', textDark: '#475569', left: '#cbd5e1', modalBg: '#475569', inputBg: '#334155', borderLight: '#64748b' },
+  { id: 'velvet', name: 'Crimson Velvet', bg: '#2e1b1e', lived: '#f43f5e', current: '#fda4af', text: '#fff5f5', textMed: '#fecdd3', textDark: '#4a2c31', left: '#e11d48', modalBg: '#40262b', inputBg: '#2e1b1e', borderLight: '#5c383f' },
+  { id: 'mint', name: 'Emerald Mint', bg: '#1c2b24', lived: '#10b981', current: '#6ee7b7', text: '#f0fdf4', textMed: '#a7f3d0', textDark: '#2d453a', left: '#059669', modalBg: '#283e33', inputBg: '#1c2b24', borderLight: '#3b5a4b' },
+  { id: 'nebula', name: 'Space Nebula', bg: '#1e1b30', lived: '#a78bfa', current: '#f472b6', text: '#fdf4ff', textMed: '#ddd6fe', textDark: '#2f2b4a', left: '#8b5cf6', modalBg: '#2b2745', inputBg: '#1e1b30', borderLight: '#3e3963' },
+  { id: 'obsidian', name: 'Obsidian Zinc', bg: '#313135', lived: '#f4f4f5', current: '#cbd5e1', text: '#ffffff', textMed: '#d4d4d8', textDark: '#4b4b4f', left: '#e4e4e7', modalBg: '#414145', inputBg: '#313135', borderLight: '#515155' },
+
+  // ── LIGHT THEMES (16-30) ─────────────────────────────────────────────────
+  { id: 'paper', name: 'Classic Paper', bg: '#fcfcf9', lived: '#1c1c1e', current: '#ff3b30', text: '#1c1c1e', textMed: '#68686e', textDark: '#cbd5e1', left: '#3a3a3c', modalBg: '#ffffff', inputBg: '#f2f2f7', borderLight: '#cbd5e1' },
+  { id: 'iceberg', name: 'Polar Iceberg', bg: '#f0f4f8', lived: '#0284c7', current: '#0d9488', text: '#1e293b', textMed: '#475569', textDark: '#cbd5e1', left: '#0369a1', modalBg: '#ffffff', inputBg: '#f8fafc', borderLight: '#cbd5e1' },
+  { id: 'sand', name: 'Sahara Sand', bg: '#faf6ed', lived: '#c2410c', current: '#b45309', text: '#451a03', textMed: '#78350f', textDark: '#e9ddc7', left: '#9a3412', modalBg: '#ffffff', inputBg: '#fdfbf7', borderLight: '#f1e3cc' },
+  { id: 'cream', name: 'Berries & Cream', bg: '#fdf2f4', lived: '#db2777', current: '#f43f5e', text: '#4c0519', textMed: '#9d174d', textDark: '#fad2e1', left: '#be123c', modalBg: '#ffffff', inputBg: '#fffdfd', borderLight: '#fad2e1' },
+  { id: 'lavender_light', name: 'Lavender Fields', bg: '#f5f3ff', lived: '#7c3aed', current: '#ec4899', text: '#1e1b4b', textMed: '#4f46e5', textDark: '#ddd6fe', left: '#6d28d9', modalBg: '#ffffff', inputBg: '#faf9ff', borderLight: '#ddd6fe' },
+  { id: 'mint_light', name: 'Fresh Mint', bg: '#f0fdf4', lived: '#059669', current: '#0891b2', text: '#062f4f', textMed: '#047857', textDark: '#cbd5e1', left: '#065f46', modalBg: '#ffffff', inputBg: '#f7fdf9', borderLight: '#d1fae5' },
+  { id: 'chalk', name: 'Slate Chalk', bg: '#f4f4f5', lived: '#18181b', current: '#f97316', text: '#27272a', textMed: '#52525b', textDark: '#e4e4e7', left: '#3f3f46', modalBg: '#ffffff', inputBg: '#fafafa', borderLight: '#e4e4e7' },
+  { id: 'peach', name: 'Peach Sorbet', bg: '#fff7ed', lived: '#ea580c', current: '#e11d48', text: '#431407', textMed: '#9a3412', textDark: '#fed7aa', left: '#c2410c', modalBg: '#ffffff', inputBg: '#fffbf7', borderLight: '#fed7aa' },
+  { id: 'mist', name: 'Slate Mist', bg: '#f8fafc', lived: '#475569', current: '#0f766e', text: '#0f172a', textMed: '#334155', textDark: '#e2e8f0', left: '#1e293b', modalBg: '#ffffff', inputBg: '#f1f5f9', borderLight: '#e2e8f0' },
+  { id: 'solar_light', name: 'Solar Wind', bg: '#fefce8', lived: '#b45309', current: '#ea580c', text: '#451a03', textMed: '#78350f', textDark: '#fef08a', left: '#d97706', modalBg: '#ffffff', inputBg: '#fffbeb', borderLight: '#fef08a' },
+  { id: 'sky', name: 'Sky Horizon', bg: '#f0f9ff', lived: '#0369a1', current: '#0284c7', text: '#0c4a6e', textMed: '#0284c7', textDark: '#cbd5e1', left: '#0369a1', modalBg: '#ffffff', inputBg: '#f7fcff', borderLight: '#e0f2fe' },
+  { id: 'clay', name: 'Tuscan Clay', bg: '#fbf7f5', lived: '#9a3412', current: '#c2410c', text: '#431407', textMed: '#7c2d12', textDark: '#ebdcd3', left: '#b45309', modalBg: '#ffffff', inputBg: '#fdfbfa', borderLight: '#f1e4de' },
+  { id: 'amethyst_light', name: 'Soft Amethyst', bg: '#faf5ff', lived: '#6d28d9', current: '#a21caf', text: '#2e1065', textMed: '#5b21b6', textDark: '#cbd5e1', left: '#4c1d95', modalBg: '#ffffff', inputBg: '#fdfaff', borderLight: '#f3e8ff' },
+  { id: 'cyber_light', name: 'Retro Terminal', bg: '#eef2f6', lived: '#0f172a', current: '#2563eb', text: '#020617', textMed: '#1e293b', textDark: '#cbd5e1', left: '#1d4ed8', modalBg: '#ffffff', inputBg: '#f8fafc', borderLight: '#cbd5e1' },
+  { id: 'vintage', name: 'Vintage Sepia', bg: '#fcf8f2', lived: '#78350f', current: '#0f766e', text: '#2a170d', textMed: '#5c3d2e', textDark: '#ebd6b8', left: '#451a03', modalBg: '#ffffff', inputBg: '#fbf7f0', borderLight: '#f3e9db' }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -69,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── Clear error state on any input change ───────────────────────────── */
+  /* ── Clear error state on input changes ──────────────────────────────── */
 
   const invalidInputs = [dayInput, monthInput, yearInput, expectancyInput];
 
@@ -90,25 +101,14 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.className = `theme-btn ${t.id === activeThemeId ? 'active' : ''}`;
       btn.title = t.name;
       btn.dataset.id = t.id;
+      
+      // Physically set the button fill to the unique theme background
+      btn.style.backgroundColor = t.bg;
 
+      // Centered accent color dot representing the theme
       const preview = document.createElement('div');
       preview.className = 'theme-preview';
-
-      const sliceBg = document.createElement('div');
-      sliceBg.className = 'color-bg';
-      sliceBg.style.backgroundColor = t.bg;
-
-      const sliceLived = document.createElement('div');
-      sliceLived.className = 'color-lived';
-      sliceLived.style.backgroundColor = t.lived;
-
-      const sliceCurrent = document.createElement('div');
-      sliceCurrent.className = 'color-current';
-      sliceCurrent.style.backgroundColor = t.current;
-
-      preview.appendChild(sliceBg);
-      preview.appendChild(sliceLived);
-      preview.appendChild(sliceCurrent);
+      preview.style.backgroundColor = t.lived;
 
       btn.appendChild(preview);
 
@@ -184,10 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Show success flash, then close
       showSuccess();
 
-      // Close popup after brief success display
       clearTimeout(successTimer);
       successTimer = setTimeout(() => window.close(), 1000);
     });
